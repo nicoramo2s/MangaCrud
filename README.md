@@ -26,12 +26,17 @@ Este proyecto es una API REST en Laravel para gestionar el inventario de mangas 
    php artisan migrate
    ```
 
-5. Crear un enlace simbólico para el almacenamiento de imágenes:
+5. Ejecuta el seeder:
+   ```bash
+   php artisan db:seed
+   ```
+
+6. Crear un enlace simbólico para el almacenamiento de imágenes:
    ```bash
    php artisan storage:link
    ```
 
-6. Iniciar el servidor:
+7. Iniciar el servidor:
    ```bash
    php artisan serve
    ```
@@ -39,6 +44,18 @@ Este proyecto es una API REST en Laravel para gestionar el inventario de mangas 
 ## 🔑 Autenticación
 
 - La API usa **Laravel Sanctum** para autenticación.
+- Accede a la ruta
+```http
+POST /api/login
+```
+- Logeate con estos datos y obten tu token de acceso.
+```
+{
+   "email": "usuario@test.com",
+   "password": "password"
+}
+```
+
 - Para acceder a las rutas protegidas, se debe enviar un token en el header `Authorization: Bearer TOKEN`.
 
 ## 📌 Endpoints
